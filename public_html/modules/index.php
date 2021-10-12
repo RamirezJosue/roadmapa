@@ -2,7 +2,7 @@
     $enlace = $sitio . 'modulos/' . $accesos;
     $enlace_actual = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
     $accesos = basename(dirname(__FILE__));
-    echo $enlace_actual;
+    echo require_once('../includes/ini.php');
 	require_once('../includes/ini.php');
 	require_once('../bd/crud_usuario.php');
 	$crud=new CrudUsuario();
