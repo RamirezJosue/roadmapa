@@ -1,15 +1,39 @@
-<h1>Hello Cloudreach!</h1>
-<h4>Attempting MySQL connection from php...</h4>
-<?php
-$host = 'mysql';
-$user = 'root';
-$pass = 'rootpassword';
-$conn = new mysqli($host, $user, $pass);
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Hello there</title>
+        <style>
+            body {
+                font-family: "Arial", sans-serif;
+                font-size: larger;
+            }
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} else {
-    echo "Connected to MySQL successfully!";
-}
+            .center {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 50%;
+            }
+        </style>
+    </head>
+    <body>
+        <img src="https://tech.osteel.me/images/2020/03/04/hello.gif" alt="Hello there" class="center">
+        <?php
+        $connection = new PDO('mysql:host=mysql;dbname=roadmap;charset=utf8', 'root', 'rootpassword');
+        $query      = $connection->query("SELECT TABLE_NAME FROM information_schema.TABLES WHERE TABLE_SCHEMA = 'roadmap'");
+        $tables     = $query->fetchAll(PDO::FETCH_COLUMN);
 
-?>
+        if (empty($tables)) {
+            echo '<p class="center">There are no tables in database <code>demo</code>.</p>';
+        } else {
+            echo '<p class="center">Database <code>demo</code> contains the following tables:</p>';
+            echo '<ul class="center">';
+            foreach ($tables as $table) {
+                echo "<li>{$table}</li>";
+            }
+            echo '</ul>';
+        }
+        ?>
+    </body>
+</html>
