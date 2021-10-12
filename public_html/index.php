@@ -1,6 +1,8 @@
-﻿<?php if(session_status()!=PHP_SESSION_ACTIVE) session_start() ?>
-<?php
+﻿<?php
 // session_start();
+if( !headers_sent() && '' == session_id() ) {
+  session_start();
+}
 if (isset($_SESSION["rmd"])) {
                 // Restaura sesion
                 header( "Location: modules/index" );
