@@ -21,7 +21,7 @@
         <img src="https://tech.osteel.me/images/2020/03/04/hello.gif" alt="Hello there" class="center">
         <?php
         $connection = new PDO('mysql:host=mysql;dbname=roadmap;charset=utf8', 'root', 'rootpassword');
-        $query      = $connection->query("SELECT TABLE_NAME FROM information_schema.TABLES WHERE TABLE_SCHEMA = 'demo'");
+        $query      = $connection->query("SELECT TABLE_NAME FROM information_schema.TABLES WHERE TABLE_SCHEMA = 'usuarios'");
         $tables     = $query->fetchAll(PDO::FETCH_COLUMN);
 
         if (empty($tables)) {
