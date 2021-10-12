@@ -1,6 +1,6 @@
 ﻿<?php
-
-if (isset(session_start(),$_SESSION["rmd"])) {
+session_start();
+if (isset($_SESSION["rmd"])) {
                 // Restaura sesion
                 header( "Location: modules/index" );
             } else {
