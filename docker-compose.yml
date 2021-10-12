@@ -43,8 +43,8 @@ services:
     container_name: mysql
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
-    depends_on: 
-        - mysql
+    links: 
+        - mysql:mysql
     ports:
         - 8000:80
     environment:
