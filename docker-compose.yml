@@ -44,7 +44,7 @@ services:
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     depends_on: 
-        - mysql:mysql
+        - mysql
     ports:
         - 8000:80
     environment:
