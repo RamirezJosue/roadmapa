@@ -1,10 +1,11 @@
 
 
 <IfModule mod_rewrite.c>
+ 
     # DO NOT REMOVE THIS LINE AND THE LINES BELLOW SSL_REDIRECT:bk77.co
     RewriteEngine on
     RewriteCond %{HTTPS} off
-    RewriteCond %{HTTP_HOST} (www\.)?bk77.co
+    RewriteCond %{HTTP_HOST} (www\.)?roadmapcaa.com
     RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
     # DO NOT REMOVE THIS LINE AND THE LINES BELLOW SSL_REDIRECT:bk77.co
 
@@ -26,4 +27,5 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^(.+?)/?$ index.php?url=$1 [L,QSA]
+
 </IfModule>
