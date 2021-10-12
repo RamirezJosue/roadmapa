@@ -46,7 +46,7 @@
 		if ($usuario != NULL) {
 			session_start();
             $_SESSION["rmd"] = $usuario;
-			header('Location: modules/index'); //envia a la página que simula la cuenta
+			header('Location: modules/index.php'); //envia a la página que simula la cuenta
 			die();
 		}else{
 		  	header('Location: index?mensaje=Tus nombre de usuario o clave son incorrectos'); // cuando los datos son incorrectos envia a la página de error

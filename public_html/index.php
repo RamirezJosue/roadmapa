@@ -5,7 +5,7 @@ if( !headers_sent() && '' == session_id() ) {
 }
 if (isset($_SESSION["rmd"])) {
                 // Restaura sesion
-                header( "Location: modules/index" );
+                header( "Location: modules/index.php" );
             } else {
 ?>
 <!doctype html>
@@ -71,7 +71,7 @@ body {
   </style>	
   </head>
   <body class="text-center">
-    <form class="form-signin" action="controller_login" method="post" >
+    <form class="form-signin" action="controller_login.php" method="post" >
 	  <?php
 		if (isset($_GET['mensaje'])){
 	echo   '<div class="alert alert-danger" role="alert">
