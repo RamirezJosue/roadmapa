@@ -1,4 +1,5 @@
 ﻿<?php
+phpinfo();
 session_start();
 if (isset($_SESSION["rmd"])) {
                 // Restaura sesion
