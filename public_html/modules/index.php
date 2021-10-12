@@ -1,9 +1,8 @@
 <?php
-    $enlace = $sitio . 'modulos/' . $accesos;
-    $enlace_actual = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+    	
     $accesos = basename(dirname(__FILE__));
-    echo require_once('../includes/ini.php');
-	require_once('../includes/ini.php');
+    echo $accesos;
+	require_once('./../includes/ini.php');
 	require_once('../bd/crud_usuario.php');
 	$crud=new CrudUsuario();
     if ($usuarioestado==0){
