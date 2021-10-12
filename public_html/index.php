@@ -1,8 +1,8 @@
 ﻿<?php
-// session_start();
-if( !headers_sent() && '' == session_id() ) {
-  session_start();
-}
+session_start();
+// if( !headers_sent() && '' == session_id() ) {
+//   session_start();
+// }
 if (isset($_SESSION["rmd"])) {
                 // Restaura sesion
                 header( "Location: modules/index.php" );
