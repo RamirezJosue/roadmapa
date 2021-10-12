@@ -1,8 +1,8 @@
 <?php
     	
     $accesos = basename(dirname(__FILE__));
-    echo $accesos;
-	require_once('./../includes/ini.php');
+    echo '__ROOT__', dirname(dirname(__FILE__));
+	require_once('../includes/ini.php');
 	require_once('../bd/crud_usuario.php');
 	$crud=new CrudUsuario();
     if ($usuarioestado==0){
